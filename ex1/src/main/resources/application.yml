@@ -1,0 +1,19 @@
+# ex1 (스프링부트) — web-ai /api/aivle 호출/콜백 테스트 클라이언트+서버
+# 8081 로 콜백(/aivle)을 받고, 시작하면 lecture.mp4 를 ffmpeg 로 음원추출 → web-ai 로 전송 → 폴링한다.
+server:
+  port: 8081        # web-ai 의 콜백 대상(ai.aivle.callback.url=http://localhost:8081/aivle)과 일치
+
+app:
+  # 요약 서버 도메인
+  codegenius-base-url: https://dev-ai.educodegenius.com
+  #codegenius-base-url: http://localhost:8080
+  # 음원추출 대상 영상
+  video-file: C:/Users/dlagy/Downloads/lecture.mp4
+  # ffmpeg 실행 경로(PATH 에 있으면 그대로 ffmpeg, 없으면 절대경로로 오버라이드)
+  ffmpeg: ffmpeg
+  # (참고) 요청 식별자(pk)는 SummaryClientRunner 에 상수(PK)로 하드코딩되어 있다.
+
+logging:
+  level:
+    root: INFO
+    com.example.ex1: INFO
