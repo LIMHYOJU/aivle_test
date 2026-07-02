@@ -66,7 +66,7 @@ public class SummaryClientRunner implements ApplicationRunner {
             extractAudio(mp4, wav);
             log.info("[ex1] (1) ffmpeg 음원추출 완료 size={} bytes", Files.size(wav));
 
-            // 2) web-ai 전송 → jobId
+            // 2) 코드지니어스 전송 → jobId
             String jobId = sendAudio(wav, pk);
             log.info("[ex1] (2) 요약 요청 전송 완료 jobId={} pk={}", jobId, pk);
 

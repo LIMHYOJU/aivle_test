@@ -31,7 +31,7 @@ public class CallbackController {
 
         byte[] body = rawBody == null ? new byte[0] : rawBody;
 
-        // 서명 헤더가 오면 검증. (web-ai 시크릿 미설정 시엔 헤더가 없어 검증 생략)
+        // 서명 헤더가 오면 검증. (코드지니어스 시크릿 미설정 시엔 헤더가 없어 검증 생략)
         if (ts != null && signature != null) {
             long tsVal;
             try {
@@ -51,7 +51,7 @@ public class CallbackController {
             }
             log.info("[ex1][콜백] 서명 검증 통과");
         } else {
-            log.warn("[ex1][콜백] 서명 헤더 없음 — 검증 생략(무방비)");
+            log.warn("[ex1][콜백] 서명 헤더 없음 — 검증 생략(무방비 로컬테스트 한겁니다 여기서 걸러줘야해요)");
         }
 
         try {
@@ -73,7 +73,7 @@ public class CallbackController {
         } catch (Exception e) {
             log.warn("[ex1][콜백] 본문 파싱 실패: {}", e.getMessage());
         }
-        // 응답 바디 없음. web-ai 는 결과를 쏘고 끝내므로 ack 내용을 필요로 하지 않는다.
+        // 응답 바디 없음. .응답했다는거만.. 아니면 메세지 추가하셔서 저희쪽 로그에 남기실려면 ㅇㅇ
         return ResponseEntity.ok().build();
     }
 }

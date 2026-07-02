@@ -13,7 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>summary-example-ex1</name>
-	<description>web-ai /api/aivle 호출/콜백 테스트용 스프링부트 예제 (8081)</description>
 
 	<properties>
 		<java.version>17</java.version>
