@@ -1,15 +1,12 @@
-
 server:
-  port: 8081        
+  port: 8081
   
 app:
   # 요약 서버 도메인
-  codegenius-base-url: https://dev-ai.educodegenius.com
+  codegenius-base-url: https://cms-dev.educodegenius.com
   #codegenius-base-url: http://localhost:8080
-  # 음원추출 대상 영상
-  video-file: C:/Users/dlagy/Downloads/lecture.mp4
-  # ffmpeg 실행 경로(PATH 에 있으면 그대로 ffmpeg, 없으면 절대경로로 오버라이드)
-  ffmpeg: ffmpeg
+  vod-mapping-key: ex1-0002
+  vod-name: lecture0.mp4
 
 
 logging:

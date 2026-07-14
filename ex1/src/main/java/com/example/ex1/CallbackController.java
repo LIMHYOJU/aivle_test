@@ -58,22 +58,21 @@ public class CallbackController {
             Map<String, Object> parsed = body.length == 0
                     ? Map.of()
                     : om.readValue(body, new com.fasterxml.jackson.core.type.TypeReference<Map<String, Object>>() {});
-            String pk = String.valueOf(parsed.get("pk"));
-            String status = String.valueOf(parsed.get("status"));
-            Object summary = parsed.get("summary");
-            Object error = parsed.get("error");
+            String vodMappingKey = String.valueOf(parsed.get("vodMappingKey"));
+            Object summaryCn = parsed.get("summaryCn");
+            Object downloadUrl = parsed.get("downloadUrl");
 
-            log.info("========== [ex1][콜백 수신] pk={} status={} ==========", pk, status);
-            if (summary != null) {
-                log.info("[ex1][콜백] 요약:\n{}", summary);
+            log.info("========== [ex1][콜백 수신] vodMappingKey={} ==========", vodMappingKey);
+            if (summaryCn != null) {
+                log.info("[ex1][콜백] 요약(summaryCn):\n{}", summaryCn);
             }
-            if (error != null) {
-                log.info("[ex1][콜백] 오류: {}", error);
+            if (downloadUrl != null) {
+                log.info("[ex1][콜백] 요약 txt 다운로드(SAS): {}", downloadUrl);
             }
         } catch (Exception e) {
             log.warn("[ex1][콜백] 본문 파싱 실패: {}", e.getMessage());
         }
-        // 응답 바디 없음. .응답했다는거만.. 아니면 메세지 추가하셔서 저희쪽 로그에 남기실려면 ㅇㅇ
+        // 응답 바디 없음. .응답했다는거만..
         return ResponseEntity.ok().build();
     }
 }
