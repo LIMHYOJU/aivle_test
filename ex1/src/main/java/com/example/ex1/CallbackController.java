@@ -61,6 +61,7 @@ public class CallbackController {
             String vodMappingKey = String.valueOf(parsed.get("vodMappingKey"));
             Object summaryCn = parsed.get("summaryCn");
             Object downloadUrl = parsed.get("downloadUrl");
+            Object script = parsed.get("script");
 
             log.info("========== [ex1][콜백 수신] vodMappingKey={} ==========", vodMappingKey);
             if (summaryCn != null) {
@@ -68,6 +69,10 @@ public class CallbackController {
             }
             if (downloadUrl != null) {
                 log.info("[ex1][콜백] 요약 txt 다운로드(SAS): {}", downloadUrl);
+            }
+            if (script != null) {
+                String scriptStr = String.valueOf(script);
+                log.info("[ex1][콜백] 원문 스크립트(script) {}자:\n{}", scriptStr.length(), scriptStr);
             }
         } catch (Exception e) {
             log.warn("[ex1][콜백] 본문 파싱 실패: {}", e.getMessage());

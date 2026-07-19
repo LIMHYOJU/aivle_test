@@ -6,7 +6,7 @@ app:
   codegenius-base-url: https://cms-dev.educodegenius.com
   #codegenius-base-url: http://localhost:8080
   vod-mapping-key: ex1-0002
-  vod-name: lecture0.mp4
+  vod-name: AI_20260406_데이터 분석.mp4 #lecture0.mp4
 
 
 logging:

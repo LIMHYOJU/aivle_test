@@ -44,7 +44,6 @@ public class SummaryClientRunner implements ApplicationRunner {
         register(vodMappingKey, vodName);
     }
 
-    /** 기능1: { vodMappingKey, vodName } JSON 을 HMAC 서명해 POST /api/aivle/summarize 로 전송. */
     private void register(String vodMappingKey, String vodName) {
         try {
             Thread.sleep(1000);   // 서버 안정화 잠깐 대기

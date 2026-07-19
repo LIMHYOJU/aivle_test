@@ -14,7 +14,7 @@ public final class AivleSecurity {
     /** 대칭키 */
     public static final String SECRET = "FzNUchoys1wFEvrNsa72PeL9DLTLmK9Qh0yG5ky3yTg=";
 
-    /** 타임스탬프 허용 오차(ms). 코드지니어스와 맞춤. */
+    /** 타임스탬프 허용 오차(ms). 5분 */
         public static final long CLOCK_SKEW_MS = 300000L;
 
     private AivleSecurity() {
